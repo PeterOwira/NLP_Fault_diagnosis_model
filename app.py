@@ -6,8 +6,8 @@ app = Flask(__name__)
 ##model = load_llm_model()
 
 @app.route('/generate_text', methods=['POST'])
-def generate_text(name):
-    input_text = request.json.get(name)
+def generate_text():
+    input_text = request.json.get('text')
     # generated_text = model.generate_text(input_text)
     # return jsonify({'generated_text': generated_text})
     return jsonify({'name': input_text})
